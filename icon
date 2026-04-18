@@ -8,8 +8,8 @@ local IconModule = {
       
     Icons = {  
         ["lucide"] = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/lucide"))(),  
-        ["craft"] = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Dabixic/ssss/refs/heads/main/lua"))(),  
-        ["geist"] = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Dabixic/icons/refs/heads/main/.lua"))(),  
+        ["craft"] = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/craft"))(),  
+        ["geist"] = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/geist"))(),  
     },
 }  
   
