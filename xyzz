@@ -7,7 +7,7 @@ local f=game:GetService"TweenService"
 local g=game:GetService"LocalizationService"
 local h=game:GetService"HttpService"
 
-local i="https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/icon"
+local i="https://raw.githubusercontent.com/Dabixic/lol/refs/heads/main/lua"
 
 local j=loadstring(
 game.HttpGetAsync and game:HttpGetAsync(i)
@@ -1451,7 +1451,7 @@ local ad=ab.Tween
 
 function aa.New(ae,af,ag,ah,ai,aj,ak,al)
 ah=ah or"Primary"
-local am=al or(not ak and 10 or 99)
+local am=al or(not ak and 14 or 99)
 local an
 if af and af~=""then
 an=ac("ImageLabel",{
@@ -1514,7 +1514,7 @@ ImageColor3=ah~="White"and"Outline"or nil,
 },
 Size=UDim2.new(1,0,1,0),
 ImageColor3=ah=="White"and Color3.new(0,0,0)or nil,
-ImageTransparency=ah=="Primary"and.95 or.85,
+ImageTransparency=1,
 Name="SquircleOutline",
 },{
 ac("UIGradient",{
@@ -1564,17 +1564,36 @@ AutomaticSize="XY",
 TextSize=18,
 })
 })
+}),
+ac("UIScale",{
+Name="Scale",
+Scale=1,
+})
 })
 
 ab.AddSignal(ao.MouseEnter,function()
 ad(ao.Frame,.12,{ImageTransparency=.92}):Play()
 ad(ao.Shadow,.15,{ImageTransparency=.7}):Play()
+if ao:FindFirstChild("Scale") then
+ad(ao.Scale, 0.15, {Scale=0.98}, Enum.EasingStyle.Quart, Enum.EasingDirection.Out):Play()
+end
 end)
 ab.AddSignal(ao.MouseLeave,function()
 ad(ao.Frame,.12,{ImageTransparency=1}):Play()
 ad(ao.Shadow,.15,{ImageTransparency=1}):Play()
+if ao:FindFirstChild("Scale") then
+ad(ao.Scale, 0.15, {Scale=1}, Enum.EasingStyle.Quart, Enum.EasingDirection.Out):Play()
+end
+end)
+ab.AddSignal(ao.MouseButton1Down,function()
+if ao:FindFirstChild("Scale") then
+ad(ao.Scale, 0.1, {Scale=0.94}, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
+end
 end)
 ab.AddSignal(ao.MouseButton1Up,function()
+if ao:FindFirstChild("Scale") then
+ad(ao.Scale, 0.2, {Scale=0.98}, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
+end
 if aj then
 aj:Close()()
 end
@@ -3151,6 +3170,34 @@ Background=Color3.fromHex"#10080c",
 Button=Color3.fromHex"#FF69B4",
 Icon=Color3.fromHex"#FFB7C5",
 AcrylicMain=Color3.fromHex"#120a0e",
+},
+Apple={
+Name="Apple",
+
+Accent=Color3.fromHex"#0A84FF",
+Dialog=Color3.fromHex"#1C1C1E",
+Outline=Color3.fromHex"#38383A",
+Text=Color3.fromHex"#FFFFFF",
+Placeholder=Color3.fromHex"#8E8E93",
+PlaceholderText=Color3.fromHex"#636366",
+Background=Color3.fromHex"#000000",
+Button=Color3.fromHex"#30D158",
+Icon=Color3.fromHex"#0A84FF",
+AcrylicMain=Color3.fromHex"#1C1C1E",
+},
+AppleLight={
+Name="Apple Light",
+
+Accent=Color3.fromHex"#007AFF",
+Dialog=Color3.fromHex"#F2F2F7",
+Outline=Color3.fromHex"#C6C6C8",
+Text=Color3.fromHex"#000000",
+Placeholder=Color3.fromHex"#8E8E93",
+PlaceholderText=Color3.fromHex"#AEAEB2",
+Background=Color3.fromHex"#FFFFFF",
+Button=Color3.fromHex"#34C759",
+Icon=Color3.fromHex"#007AFF",
+AcrylicMain=Color3.fromHex"#F2F2F7",
 },
 }
 end end function a.s()
