@@ -7,7 +7,7 @@ local f=game:GetService"TweenService"
 local g=game:GetService"LocalizationService"
 local h=game:GetService"HttpService"
 
-local i="https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/icon"
+local i="https://raw.githubusercontent.com/Dabixic/lol/refs/heads/main/lua"
 
 local j=loadstring(
 game.HttpGetAsync and game:HttpGetAsync(i)
@@ -668,7 +668,7 @@ local f=b.Tween
 local g={
 Size=UDim2.new(0,300,1,-156),
 SizeLower=UDim2.new(0,300,1,-56),
-UICorner=22,
+UICorner=18,
 UIPadding=14,
 
 Holder=nil,
@@ -802,20 +802,11 @@ end
 
 local m=e("Frame",{
 Size=UDim2.new(0,0,1,0),
-BackgroundTransparency=.75,
+BackgroundTransparency=.95,
 ThemeTag={
-BackgroundColor3="Button",
+BackgroundColor3="Text",
 },
 
-},{
-e("UIGradient",{
-Rotation=0,
-Transparency=NumberSequence.new{
-NumberSequenceKeypoint.new(0,0),
-NumberSequenceKeypoint.new(0.8,0.2),
-NumberSequenceKeypoint.new(1,0.6),
-}
-})
 })
 
 local p=e("Frame",{
@@ -904,29 +895,6 @@ ImageTransparency=i.BackgroundImageTransparency
 },{
 e("UICorner",{
 CornerRadius=UDim.new(0,g.UICorner),
-})
-}),
-
-e("Frame",{
-Name="AccentGlow",
-Size=UDim2.new(1,-16,0,2),
-Position=UDim2.new(0.5,0,0,4),
-AnchorPoint=Vector2.new(0.5,0),
-BackgroundTransparency=.3,
-ThemeTag={
-BackgroundColor3="Button",
-},
-},{
-e("UICorner",{
-CornerRadius=UDim.new(1,0),
-}),
-e("UIGradient",{
-Transparency=NumberSequence.new{
-NumberSequenceKeypoint.new(0,0.6),
-NumberSequenceKeypoint.new(0.3,0),
-NumberSequenceKeypoint.new(0.7,0),
-NumberSequenceKeypoint.new(1,0.6),
-}
 })
 }),
 
@@ -1451,7 +1419,7 @@ local ad=ab.Tween
 
 function aa.New(ae,af,ag,ah,ai,aj,ak,al)
 ah=ah or"Primary"
-local am=al or(not ak and 14 or 99)
+local am=al or(not ak and 10 or 99)
 local an
 if af and af~=""then
 an=ac("ImageLabel",{
@@ -1514,7 +1482,7 @@ ImageColor3=ah~="White"and"Outline"or nil,
 },
 Size=UDim2.new(1,0,1,0),
 ImageColor3=ah=="White"and Color3.new(0,0,0)or nil,
-ImageTransparency=1,
+ImageTransparency=ah=="Primary"and.95 or.85,
 Name="SquircleOutline",
 },{
 ac("UIGradient",{
@@ -1564,36 +1532,15 @@ AutomaticSize="XY",
 TextSize=18,
 })
 })
-}),
-ac("UIScale",{
-Name="Scale",
-Scale=1,
-})
 })
 
 ab.AddSignal(ao.MouseEnter,function()
-ad(ao.Frame,.12,{ImageTransparency=.92}):Play()
-ad(ao.Shadow,.15,{ImageTransparency=.7}):Play()
-if ao:FindFirstChild("Scale") then
-ad(ao.Scale, 0.15, {Scale=0.98}, Enum.EasingStyle.Quart, Enum.EasingDirection.Out):Play()
-end
+ad(ao.Frame,.047,{ImageTransparency=.95}):Play()
 end)
 ab.AddSignal(ao.MouseLeave,function()
-ad(ao.Frame,.12,{ImageTransparency=1}):Play()
-ad(ao.Shadow,.15,{ImageTransparency=1}):Play()
-if ao:FindFirstChild("Scale") then
-ad(ao.Scale, 0.15, {Scale=1}, Enum.EasingStyle.Quart, Enum.EasingDirection.Out):Play()
-end
-end)
-ab.AddSignal(ao.MouseButton1Down,function()
-if ao:FindFirstChild("Scale") then
-ad(ao.Scale, 0.1, {Scale=0.94}, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
-end
+ad(ao.Frame,.047,{ImageTransparency=1}):Play()
 end)
 ab.AddSignal(ao.MouseButton1Up,function()
-if ao:FindFirstChild("Scale") then
-ad(ao.Scale, 0.2, {Scale=0.98}, Enum.EasingStyle.Quint, Enum.EasingDirection.Out):Play()
-end
 if aj then
 aj:Close()()
 end
@@ -3046,16 +2993,14 @@ Icon=Color3.fromHex"#10b981",
 Midnight={
 Name="Midnight",
 
-Accent=Color3.fromHex"#FF1493",
-Dialog=Color3.fromHex"#0a0a10",
-Outline=Color3.fromHex"#1e1e2e",
-Text=Color3.fromHex"#f0f0ff",
-Placeholder=Color3.fromHex"#5a5a78",
-PlaceholderText=Color3.fromHex"#5a5a78",
-Background=Color3.fromHex"#050508",
-Button=Color3.fromHex"#FF6B2B",
-Icon=Color3.fromHex"#FF69B4",
-AcrylicMain=Color3.fromHex"#08080d",
+Accent=Color3.fromHex"#FF0F7B",
+Dialog=Color3.fromHex"#0d0d12",
+Outline=Color3.fromHex"#2a2a35",
+Text=Color3.fromHex"#f5f5fa",
+Placeholder=Color3.fromHex"#6d6d84",
+Background=Color3.fromHex"#07070a",
+Button=Color3.fromHex"#F89B29",
+Icon=Color3.fromHex"#FF4E98",
 },
 Crimson={
 Name="Crimson",
@@ -3142,63 +3087,7 @@ Rotation=60,
 }),
 
 Icon=Color3.fromHex"#ffffff",
-},
-NeonPulse={
-Name="Neon Pulse",
-
-Accent=Color3.fromHex"#00FFFF",
-Dialog=Color3.fromHex"#0a0a14",
-Outline=Color3.fromHex"#1a1a2e",
-Text=Color3.fromHex"#e8e8ff",
-Placeholder=Color3.fromHex"#4a4a6a",
-PlaceholderText=Color3.fromHex"#4a4a6a",
-Background=Color3.fromHex"#06060e",
-Button=Color3.fromHex"#FF00FF",
-Icon=Color3.fromHex"#00FFCC",
-AcrylicMain=Color3.fromHex"#080810",
-},
-Sakura={
-Name="Sakura",
-
-Accent=Color3.fromHex"#FFB7C5",
-Dialog=Color3.fromHex"#1a0f14",
-Outline=Color3.fromHex"#3d2333",
-Text=Color3.fromHex"#fff0f5",
-Placeholder=Color3.fromHex"#8a6070",
-PlaceholderText=Color3.fromHex"#8a6070",
-Background=Color3.fromHex"#10080c",
-Button=Color3.fromHex"#FF69B4",
-Icon=Color3.fromHex"#FFB7C5",
-AcrylicMain=Color3.fromHex"#120a0e",
-},
-Apple={
-Name="Apple",
-
-Accent=Color3.fromHex"#0A84FF",
-Dialog=Color3.fromHex"#1C1C1E",
-Outline=Color3.fromHex"#38383A",
-Text=Color3.fromHex"#FFFFFF",
-Placeholder=Color3.fromHex"#8E8E93",
-PlaceholderText=Color3.fromHex"#636366",
-Background=Color3.fromHex"#000000",
-Button=Color3.fromHex"#30D158",
-Icon=Color3.fromHex"#0A84FF",
-AcrylicMain=Color3.fromHex"#1C1C1E",
-},
-AppleLight={
-Name="Apple Light",
-
-Accent=Color3.fromHex"#007AFF",
-Dialog=Color3.fromHex"#F2F2F7",
-Outline=Color3.fromHex"#C6C6C8",
-Text=Color3.fromHex"#000000",
-Placeholder=Color3.fromHex"#8E8E93",
-PlaceholderText=Color3.fromHex"#AEAEB2",
-Background=Color3.fromHex"#FFFFFF",
-Button=Color3.fromHex"#34C759",
-Icon=Color3.fromHex"#007AFF",
-AcrylicMain=Color3.fromHex"#F2F2F7",
-},
+}
 }
 end end function a.s()
 local aa={}
@@ -4648,7 +4537,7 @@ Padding=UDim.new(0,8)
 local ax,ay=ac(af.UICorner,"Squircle",{
 Size=UDim2.new(1,0,0,0),
 AutomaticSize="Y",
-ImageTransparency=af.Color and.05 or.94,
+ImageTransparency=af.Color and.05 or.93,
 
 
 
@@ -4680,12 +4569,12 @@ af.UIElements.Locked=ar
 if af.Hover then
 aa.AddSignal(ax.MouseEnter,function()
 if ai then
-ad(ax,.08,{ImageTransparency=af.Color and.15 or.88}):Play()
+ad(ax,.05,{ImageTransparency=af.Color and.15 or.9}):Play()
 end
 end)
 aa.AddSignal(ax.InputEnded,function()
 if ai then
-ad(ax,.08,{ImageTransparency=af.Color and.05 or.94}):Play()
+ad(ax,.05,{ImageTransparency=af.Color and.05 or.93}):Play()
 end
 end)
 end
@@ -5129,7 +5018,7 @@ ThemeTag={
 ImageColor3="Text"
 },
 Parent=ag,
-Size=UDim2.new(0,48,0,28),
+Size=UDim2.new(0,41.6,0,26),
 },{
 ab.NewRoundFrame(aj,"Squircle",{
 Size=UDim2.new(1,0,1,0),
@@ -5156,8 +5045,8 @@ NumberSequenceKeypoint.new(1,1),
 
 
 ab.NewRoundFrame(aj,"Squircle",{
-Size=UDim2.new(0,20,0,20),
-Position=UDim2.new(0,4,0.5,0),
+Size=UDim2.new(0,18,0,18),
+Position=UDim2.new(0,3,0.5,0),
 AnchorPoint=Vector2.new(0,0.5),
 ImageTransparency=0,
 ImageColor3=Color3.new(1,1,1),
@@ -5173,48 +5062,36 @@ ak,
 
 function ai.Set(am,an,ao)
 if an then
-ad(al.Frame,0.08,{
-Size=UDim2.new(0,24,0,20),
-Position=UDim2.new(1,-24,0.5,0),
-},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
-task.spawn(function()
-task.wait(0.08)
 ad(al.Frame,0.15,{
-Size=UDim2.new(0,20,0,20),
+Position=UDim2.new(1,-22,0.5,0),
+
 },Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
-end)
-ad(al.Layer,0.12,{
+ad(al.Layer,0.1,{
 ImageTransparency=0,
 }):Play()
-ad(al.Stroke,0.12,{
-ImageTransparency=0.92,
+ad(al.Stroke,0.1,{
+ImageTransparency=0.95,
 }):Play()
 
 if ak then
-ad(ak,0.12,{
+ad(ak,0.1,{
 ImageTransparency=0,
 }):Play()
 end
 else
-ad(al.Frame,0.08,{
-Size=UDim2.new(0,24,0,20),
-Position=UDim2.new(0,4,0.5,0),
-},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
-task.spawn(function()
-task.wait(0.08)
 ad(al.Frame,0.15,{
-Size=UDim2.new(0,20,0,20),
+Position=UDim2.new(0,4,0.5,0),
+Size=UDim2.new(0,18,0,18),
 },Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
-end)
-ad(al.Layer,0.12,{
+ad(al.Layer,0.1,{
 ImageTransparency=1,
 }):Play()
-ad(al.Stroke,0.12,{
+ad(al.Stroke,0.1,{
 ImageTransparency=1,
 }):Play()
 
 if ak then
-ad(ak,0.12,{
+ad(ak,0.1,{
 ImageTransparency=1,
 }):Play()
 end
@@ -5267,7 +5144,7 @@ ThemeTag={
 ImageColor3="Text"
 },
 Parent=ag,
-Size=UDim2.new(0,30,0,30),
+Size=UDim2.new(0,27,0,27),
 },{
 ab.NewRoundFrame(aj,"Squircle",{
 Size=UDim2.new(1,0,1,0),
@@ -5297,23 +5174,23 @@ ak,
 
 function ai.Set(am,an)
 if an then
-ad(al.Layer,0.1,{
+ad(al.Layer,0.06,{
 ImageTransparency=0,
 }):Play()
-ad(al.Stroke,0.1,{
-ImageTransparency=0.92,
+ad(al.Stroke,0.06,{
+ImageTransparency=0.95,
 }):Play()
-ad(ak,0.1,{
+ad(ak,0.06,{
 ImageTransparency=0,
 }):Play()
 else
-ad(al.Layer,0.08,{
+ad(al.Layer,0.05,{
 ImageTransparency=1,
 }):Play()
-ad(al.Stroke,0.08,{
+ad(al.Stroke,0.05,{
 ImageTransparency=1,
 }):Play()
-ad(ak,0.1,{
+ad(ak,0.06,{
 ImageTransparency=1,
 }):Play()
 end
@@ -5444,7 +5321,7 @@ IsFocusing=false,
 
 Width=130,
 TextBoxWidth=30,
-ThumbSize=16,
+ThumbSize=13,
 }
 local aj
 local ak
@@ -5487,7 +5364,7 @@ ElementTable=ai,
 
 ai.UIElements.SliderIcon=aa.NewRoundFrame(99,"Squircle",{
 ImageTransparency=.95,
-Size=UDim2.new(1,-ai.TextBoxWidth-8,0,6),
+Size=UDim2.new(1,-ai.TextBoxWidth-8,0,4),
 Name="Frame",
 ThemeTag={
 ImageColor3="Text",
@@ -5496,7 +5373,7 @@ ImageColor3="Text",
 aa.NewRoundFrame(99,"Squircle",{
 Name="Frame",
 Size=UDim2.new(ao,0,1,0),
-ImageTransparency=.05,
+ImageTransparency=.1,
 ThemeTag={
 ImageColor3="Button",
 },
@@ -6190,7 +6067,7 @@ BackgroundColor3="Text"
 },
 TextSize=15,
 BackgroundTransparency=1,
-TextTransparency=.45,
+TextTransparency=.4,
 LayoutOrder=999,
 AutomaticSize="Y",
 
@@ -6440,10 +6317,10 @@ local ai=a.load'H'.New local aj=
 workspace.CurrentCamera
 
 local ak={
-UICorner=12,
+UICorner=10,
 UIPadding=12,
-MenuCorner=18,
-MenuPadding=6,
+MenuCorner=15,
+MenuPadding=5,
 TabPadding=10,
 SearchBarHeight=39,
 TabIcon=18,
@@ -8309,7 +8186,7 @@ Text=ao.Title,
 ThemeTag={
 TextColor3="Text"
 },
-TextTransparency=not ao.Locked and 0.5 or.7,
+TextTransparency=not ao.Locked and 0.4 or.7,
 TextSize=15,
 Size=UDim2.new(1,0,0,0),
 FontFace=Font.new(ae.Font,Enum.FontWeight.SemiBold),
@@ -8502,7 +8379,7 @@ end
 
 ae.AddSignal(ao.UIElements.Main.MouseEnter,function()
 if not ao.Locked then
-ai(ao.UIElements.Main.Frame,0.12,{ImageTransparency=.95}):Play()
+ai(ao.UIElements.Main.Frame,0.08,{ImageTransparency=.97}):Play()
 end
 end)
 ae.AddSignal(ao.UIElements.Main.InputEnded,function()
@@ -8523,7 +8400,7 @@ end
 end
 
 if not ao.Locked then
-ai(ao.UIElements.Main.Frame,0.12,{ImageTransparency=1}):Play()
+ai(ao.UIElements.Main.Frame,0.08,{ImageTransparency=1}):Play()
 end
 end)
 
