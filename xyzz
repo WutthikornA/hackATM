@@ -7,7 +7,7 @@ local f=game:GetService"TweenService"
 local g=game:GetService"LocalizationService"
 local h=game:GetService"HttpService"
 
-local i="https://raw.githubusercontent.com/Dabixic/lol/refs/heads/main/lua"
+local i="https://raw.githubusercontent.com/WutthikornA/hackATM/refs/heads/main/icon"
 
 local j=loadstring(
 game.HttpGetAsync and game:HttpGetAsync(i)
